@@ -1,10 +1,16 @@
-import { operationAction } from "../components/DigitButton";
+import { operationAction } from "../DigitButton";
 export interface State {
   previousOperand: string | "";
   currentOperand: string | "";
   operation?: string | "";
   overwrite?: boolean;
 }
+export const initialState: State = {
+  previousOperand: "",
+  currentOperand: "",
+  operation: "",
+  overwrite: false,
+};
 const DigitReducer = (state: State, action: operationAction): State => {
   switch (action.type) {
     case "ADD_DIGIT":

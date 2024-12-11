@@ -3,16 +3,13 @@ import "./App.css";
 import Calculator from "./projects/calculator/Calculator";
 import { Button } from "@/components/ui/button";
 import { HStack } from "@chakra-ui/react";
+import Layout from "./projects/game-station/layout";
 
 function App() {
   return (
     <>
-      <HStack>
-        <Button color="red">Button 1</Button>
-        <Button>Button 2</Button>
-        <Button>Button 3</Button>
-      </HStack>
-      <Calculator />
+      <Layout children={undefined} />
+      {/* <Calculator /> */}
     </>
   );
 }

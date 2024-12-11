@@ -11,7 +11,18 @@ const GamesGrid = () => {
           <Card key={game.id} game={game} />
         ))}
       </div>
+      <style>
+        {`
+          .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            padding: 1rem;
+          }
+        `}
+      </style>
     </>
   );
 };
+
 export default GamesGrid;

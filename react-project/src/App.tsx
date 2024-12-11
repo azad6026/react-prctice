@@ -3,7 +3,7 @@ import "./App.css";
 import Calculator from "./projects/calculator/Calculator";
 import { Button } from "@/components/ui/button";
 import { HStack } from "@chakra-ui/react";
-import Layout from "./projects/game-station/layout";
+import Layout from "./projects/game-station/Layout";
 
 function App() {
   return (

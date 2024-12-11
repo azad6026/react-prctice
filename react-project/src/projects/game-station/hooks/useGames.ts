@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import getApiUrl from "../services/api-client";
 
-interface Games {
+export interface Games {
   id: number;
   name: string;
+  background_image: string;
 }
 interface ResultsInterface {
   count: number;

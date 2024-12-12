@@ -1,14 +1,14 @@
 import useGenres from "../hooks/useGeres";
 
 const GenresList = () => {
-  const { genres, error, isLoading } = useGenres();
+  const { data, error, isLoading } = useGenres();
 
   return (
     <>
       {error && <p>{error}</p>}
       <div className="genres-list">
         {isLoading && <p>Loading...</p>}
-        {genres.map((genre) => (
+        {data.map((genre) => (
           <button key={genre.id} className="genre">
             <img width="20px" src={genre.background_image} alt={genre.name} />
             <p>{genre.name}</p>

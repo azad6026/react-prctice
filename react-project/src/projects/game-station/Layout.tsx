@@ -2,6 +2,7 @@ import React from "react";
 import { Grid, GridItem, Box, Show, Stack } from "@chakra-ui/react";
 import NavBar from "./NavBar";
 import GamesGrid from "./components/GamesGrid";
+import GenresList from "./components/GenresList";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -10,7 +11,7 @@ interface LayoutProps {
 const Layout = ({ children }: LayoutProps) => (
   <Grid
     gridTemplateRows={"auto 1fr"}
-    templateColumns={"50px 1fr"}
+    templateColumns={"150px 1fr"}
     h="100vh"
     gap="1"
   >
@@ -19,7 +20,7 @@ const Layout = ({ children }: LayoutProps) => (
     </GridItem>
     <Stack hideFrom="lg">
       <GridItem bg="gray.200" colSpan={1} rowSpan={1 / 2} height="">
-        <Box>Aside</Box>
+        <GenresList />
       </GridItem>
     </Stack>
     <GridItem bg="gray.50" colSpan={1}>

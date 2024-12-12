@@ -7,11 +7,8 @@ interface CardProps {
 const Card = ({ game }: CardProps) => {
   return (
     <>
-      <figure style={{ width: "200px" }}>
-        <img
-          src={getCroppeedImageUrl(game.background_image)}
-          alt={game.name}
-        />
+      <figure style={{ borderRadius: "10px" }}>
+        <img src={getCroppeedImageUrl(game.background_image)} alt={game.name} />
         <figcaption>
           <h2>{game.name}</h2>
         </figcaption>

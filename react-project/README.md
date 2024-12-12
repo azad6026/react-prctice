@@ -1,6 +1,6 @@
 # React projects
 
-## Calclator project
+## Calculator project
 
 Built a calculator usng useReducer hook
 

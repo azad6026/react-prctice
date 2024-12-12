@@ -9,8 +9,7 @@ interface Platform {
 export interface Genres {
   id: number;
   name: string;
-  background_image: string;
-  parent_platforms: { platform: Platform }[];
+  image_background: string;
 }
 const useGenres = () => useData<Genres>("genres");
 

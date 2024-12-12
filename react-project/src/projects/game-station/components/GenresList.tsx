@@ -1,4 +1,5 @@
 import useGenres from "../hooks/useGeres";
+import getCroppeedImageUrl from "../services/image-url";
 
 const GenresList = () => {
   const { data, error, isLoading } = useGenres();
@@ -10,7 +11,12 @@ const GenresList = () => {
         {isLoading && <p>Loading...</p>}
         {data.map((genre) => (
           <button key={genre.id} className="genre">
-            <img width="20px" src={genre.background_image} alt={genre.name} />
+            <img
+              width="20px"
+              height="20px"
+              src={getCroppeedImageUrl(genre.image_background)}
+              alt={genre.name}
+            />
             <p>{genre.name}</p>
           </button>
         ))}

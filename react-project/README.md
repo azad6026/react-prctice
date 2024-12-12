@@ -2,7 +2,7 @@
 
 ## Calculator project
 
-Built a calculator usng useReducer hook
+Built a calculator with useReducer hook
 
 ## Game station project
 

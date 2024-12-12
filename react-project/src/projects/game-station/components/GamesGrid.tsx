@@ -1,12 +1,15 @@
 import useGames from "../hooks/useGames";
 import Card from "./Card";
+import CardSkeleton from "./CardSkeleton";
 
 const GamesGrid = () => {
-  const { games, error } = useGames();
+  const { games, error, isLoading } = useGames();
+  const skeleton = [1, 2, 3, 4, 5, 6, 7, 8];
   return (
     <>
       {error && <p>{error}</p>}
       <div className="games-grid">
+        {isLoading && skeleton.map((card) => <CardSkeleton key={card} />)}
         {games.map((game) => (
           <Card key={game.id} game={game} />
         ))}

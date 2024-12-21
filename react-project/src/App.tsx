@@ -1,15 +1,16 @@
+import { useState } from "react";
 import "./App.css";
-// import CalculatorZustand from "./components/calculator-zustand/CalculatorZustand";
-import Calculator from "./projects/calculator/Calculator";
-import { Button } from "@/components/ui/button";
-import { HStack } from "@chakra-ui/react";
 import Layout from "./projects/game-station/Layout";
+import { Genres } from "./projects/game-station/hooks/useGenres";
 
 function App() {
+  const [selectedGenre, setSelectedGenre] = useState<Genres | null>(null);
+
   return (
     <>
-      <Layout children={undefined} />
-      {/* <Calculator /> */}
+      <Layout
+        onSelectGenre={(genre) => setSelectedGenre(genre)}
+      />
     </>
   );
 }

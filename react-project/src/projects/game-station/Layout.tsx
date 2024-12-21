@@ -1,32 +1,31 @@
-import React from "react";
-import { Grid, GridItem, Box, Show, Stack } from "@chakra-ui/react";
-import NavBar from "./NavBar";
-import GamesGrid from "./components/GamesGrid";
+import { useState } from "react";
 import GenresList from "./components/GenresList";
+import GamesGrid from "./components/GamesGrid";
+import NavBar from "./NavBar";
+import { Genres } from "./hooks/useGenres";
 
 interface LayoutProps {
-  children: React.ReactNode;
+  onSelectGenre: (genre: Genres) => void;
 }
 
-const Layout = ({ children }: LayoutProps) => (
-  <Grid
-    gridTemplateRows={"auto 1fr"}
-    templateColumns={"150px 1fr"}
-    h="100vh"
-    gap="1"
-  >
-    <GridItem colSpan={2}>
-      <NavBar />
-    </GridItem>
-    <Stack hideFrom="lg">
-      <GridItem bg="gray.200" colSpan={1} rowSpan={1 / 2} height="">
-        <GenresList />
-      </GridItem>
-    </Stack>
-    <GridItem bg="gray.50" colSpan={1}>
-      <GamesGrid />
-    </GridItem>
-  </Grid>
-);
+const Layout = ({ onSelectGenre }: LayoutProps) => {
+  const [selectedGenre, setSelectedGenre] = useState<Genres | null>(null);
+
+  return (
+    <>
+      <div className="grid-container">
+        <nav className="navbar" aria-label="Main Navigation">
+          <NavBar />
+        </nav>
+        <aside className="genres-list" aria-label="Genres List">
+          <GenresList onSelectGenre={setSelectedGenre} />
+        </aside>
+        <main className="games-grid" aria-label="Games Grid">
+          <GamesGrid selectedGenre={selectedGenre} />
+        </main>
+      </div>
+    </>
+  );
+};
 
 export default Layout;

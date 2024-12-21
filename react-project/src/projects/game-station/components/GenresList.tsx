@@ -1,7 +1,10 @@
-import useGenres from "../hooks/useGeres";
+import useGenres, { Genres } from "../hooks/useGenres";
 import getCroppeedImageUrl from "../services/image-url";
 
-const GenresList = () => {
+interface Props {
+  onSelectGenre: (genre: Genres) => void;
+}
+const GenresList = ({ onSelectGenre }: Props) => {
   const { data, error, isLoading } = useGenres();
 
   return (
@@ -10,7 +13,11 @@ const GenresList = () => {
       <div className="genres-list">
         {isLoading && <p>Loading...</p>}
         {data.map((genre) => (
-          <button key={genre.id} className="genre">
+          <button
+            key={genre.id}
+            className="genre"
+            onClick={() => onSelectGenre(genre)}
+          >
             <img
               width="20px"
               height="20px"

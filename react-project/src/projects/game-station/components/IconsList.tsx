@@ -1,10 +1,10 @@
-import React from 'react';
+// import React from 'react';
 
-const IconsList = () => {
-    return (
-        <>
-        </>
-    );
-}
+// const IconsList = () => {
+//     return (
+//         <>
+//         </>
+//     );
+// }
 
-export default IconsList;
+// export default IconsList;

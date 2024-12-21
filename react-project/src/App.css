@@ -77,3 +77,29 @@ button:hover,
 button:focus {
   background-color: rgba(255, 255, 255, 0.8);
 }
+/* game grid */
+.grid-container {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 150px 1fr;
+  height: 100vh;
+  gap: 1px;
+}
+.navbar {
+  grid-column: span 2;
+  background-color: #f8f8f8;
+  padding: 10px;
+}
+.genres-list {
+  background-color: #e2e2e2;
+  padding: 10px;
+}
+.games-grid {
+  background-color: #f0f0f0;
+  padding: 10px;
+}
+@media (max-width: 1024px) {
+  .genres-list {
+    display: none;
+  }
+}

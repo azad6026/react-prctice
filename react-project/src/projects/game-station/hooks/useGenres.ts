@@ -1,10 +1,10 @@
 import useData from "./useData";
 
-interface Platform {
-  id: number;
-  name: string;
-  slug: string;
-}
+// interface Platform {
+//   id: number;
+//   name: string;
+//   slug: string;
+// }
 
 export interface Genres {
   id: number;

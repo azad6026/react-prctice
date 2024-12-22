@@ -4,11 +4,11 @@ import GamesGrid from "./components/GamesGrid";
 import NavBar from "./NavBar";
 import { Genres } from "./hooks/useGenres";
 
-interface LayoutProps {
-  onSelectGenre: (genre: Genres) => void;
-}
+// interface LayoutProps {
+//   onSelectGenre: (genre: Genres) => void;
+// }
 
-const Layout = ({ onSelectGenre }: LayoutProps) => {
+const Layout = () => {
   const [selectedGenre, setSelectedGenre] = useState<Genres | null>(null);
 
   return (

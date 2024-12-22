@@ -1,0 +1,70 @@
+/* src/todoapp/components/Todo.css */
+
+.todo-item {
+  display: grid;
+  grid-template-columns: repeat(2, 130px);
+  justify-content: start;
+  align-items: center;
+  gap: 1rem;
+  padding: 10px;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  background-color: #f9f9f9;
+}
+@media screen and (min-width: 540px) {
+  .todo-item {
+    grid-template-columns: 1fr auto auto;
+    justify-content: space-between;
+  }
+}
+.todo-text {
+  grid-column: 1 / span 2;
+}
+@media screen and (min-width: 540px) {
+  .todo-text {
+    grid-column: 1;
+  }
+}
+.todo-item.completed {
+  text-decoration: line-through;
+  color: #aaaaaa;
+}
+
+.todo-item button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  justify-self: start;
+  grid-column: 1;
+  grid-row: 2;
+}
+@media screen and (min-width: 540px) {
+  .todo-item button {
+    grid-row: 1;
+  }
+}
+.todo-item .toggle-button {
+  background-color: #28a745;
+  color: #ffffff;
+}
+
+.todo-item .toggle-button:hover {
+  background-color: #218838;
+}
+
+.todo-item .remove-button {
+  background-color: #dc3545;
+  color: #ffffff;
+  grid-column: 2;
+}
+@media screen and (min-width: 540px) {
+  .todo-item remove-button {
+    grid-column: 3;
+  }
+}
+.todo-item .remove-button:hover {
+  background-color: #c82333;
+}

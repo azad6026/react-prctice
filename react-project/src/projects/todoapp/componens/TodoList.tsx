@@ -10,7 +10,7 @@ interface TodoListProps {
 const TodoList = ({ todos, toggleComplete, removeTodo }: TodoListProps) => {
   return (
     <div className="todo-list">
-      <h1 className="todo-list-title">List yuour items here. Enjoy !</h1>
+      <h1 className="todo-list-title">List your items here. Enjoy !</h1>
       <ul>
         {todos.map((item) => (
           <Todo

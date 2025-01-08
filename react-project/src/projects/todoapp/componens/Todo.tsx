@@ -1,5 +1,4 @@
 import "../styles/Todo.css";
-
 export interface TodoItem {
   id: number;
   text: string;

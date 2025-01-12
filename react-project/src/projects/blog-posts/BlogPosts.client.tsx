@@ -22,11 +22,14 @@ function Posts() {
   const [visibleCount, setVisibleCount] = useState<number>(10);
 
   useEffect(() => {
-    fetchBlogPosts().then((data) => {
+    const fetchData = async () => {
+      const data = await fetchBlogPosts();
       setPosts(data);
       setVisiblePosts(data.slice(0, 10));
       setLoading(false);
-    });
+    };
+
+    fetchData();
   }, []);
 
   const showMorePosts = () => {

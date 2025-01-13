@@ -20,6 +20,7 @@ function Posts() {
   const [visiblePosts, setVisiblePosts] = useState<Post[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [visibleCount, setVisibleCount] = useState<number>(10);
+  const [searchQuery, setSearchQuery] = useState<string>("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -38,6 +39,17 @@ function Posts() {
     setVisibleCount(newVisibleCount);
   };
 
+  const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const query = event.target.value;
+    setSearchQuery(query);
+    const filteredPosts = posts.filter(
+      (post) =>
+        post.title.toLowerCase().includes(query.toLowerCase()) ||
+        post.body.toLowerCase().includes(query.toLowerCase())
+    );
+    setVisiblePosts(filteredPosts.slice(0, visibleCount));
+  };
+
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -45,11 +57,20 @@ function Posts() {
   return (
     <div>
       <h1>Blog Posts</h1>
+      <input
+        type="text"
+        placeholder="Search posts..."
+        value={searchQuery}
+        onChange={handleSearch}
+        className="search-input"
+      />
       <BlogPosts posts={visiblePosts} />
       {visibleCount < posts.length && (
-        <button onClick={showMorePosts} className="show-more-button">
-          Show More
-        </button>
+        <div className="show-more-button-container">
+          <button onClick={showMorePosts} className="show-more-button">
+            Show More
+          </button>
+        </div>
       )}
     </div>
   );

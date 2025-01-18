@@ -1,8 +1,7 @@
 // import { useState } from "react";
 import "./App.css";
-import AddMovie from "./projects/movie-app/components/AddMovie";
-import MovieList from "./projects/movie-app/components/MovieList";
-import { MovieProvider } from "./projects/movie-app/context/MovieContext";
+import Posts from "./projects/blog-posts/BlogPosts";
+import AppRouter from "./Router";
 // import Layout from "./projects/game-station/Layout";
 // import { Genres } from "./projects/game-station/hooks/useGenres";
 
@@ -40,12 +39,12 @@ function App() {
 
   return (
     <>
-      <div className="main">
-        {/* <CurrentLocationWether /> */}
-        {/* <Weather city="tehran" /> */}
-        {/* <CitiesWeather /> */}
+      {/* <div className="main"> */}
+      {/* <CurrentLocationWether /> */}
+      {/* <Weather city="tehran" /> */}
+      {/* <CitiesWeather /> */}
 
-        {/* <div className="todo-app">
+      {/* <div className="todo-app">
         <TodoList
         todos={todos}
         toggleComplete={toggleComplete}
@@ -53,18 +52,19 @@ function App() {
         />
         <TodoInput addTodo={addTodo} />
         </div> */}
-        {/* <Layout
+      {/* <Layout
         onSelectGenre={(genre) => setSelectedGenre(genre)}
         /> */}
-      </div>
-      <MovieProvider>
+      {/* </div> */}
+      {/* <MovieProvider>
         <div className="App">
           <header className="App-header">
             <h1>Type the movie name to select from the movie list</h1>{" "}
             <AddMovie /> <MovieList />
           </header>
         </div>
-      </MovieProvider>
+      </MovieProvider> */}
+      <AppRouter />
     </>
   );
 }

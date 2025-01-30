@@ -4,7 +4,10 @@ import { MovieProvider } from "./projects/movie-app/context/MovieContext";
 import AddMovie from "./projects/movie-app/components/AddMovie";
 import MovieList from "./projects/movie-app/components/MovieList";
 import CitiesWeather from "./projects/weatherapp/CitiesWeather";
+import RootLayout from "./projects/movie-discovery/app/layout.server";
+import App from "./projects/movie-discovery/components/App.client";
 // import BlogPosts from "./projects/blog-posts/BlogPostsOnly";
+// Create a React Query client
 
 const AppRouter = () => {
   return (
@@ -17,6 +20,7 @@ const AppRouter = () => {
               <Link to="/movie-app">Movie App</Link>
               {/* <Link to="/blog-posts">Blog Posts</Link> */}
               <Link to="/weatherapp">Weather App</Link>
+              <Link to="/movie-discovery">Discovery app</Link>
             </li>
           </ul>
         </nav>
@@ -37,6 +41,14 @@ const AppRouter = () => {
           />
           {/* <Route path="/blog-posts" element={<BlogPosts posts={[]} />} /> */}
           <Route path="/weatherapp" element={<CitiesWeather />} />
+          <Route
+            path="/movie-discovery"
+            element={
+              // <RootLayout>
+              <App />
+              // </RootLayout>
+            }
+          />
         </Routes>
       </div>
     </Router>

@@ -1,0 +1,105 @@
+:root {
+  --font-family: "Roboto", sans-serif;
+  --accent-colour: #e6e497;
+  --alternative-colour: #06b117;
+  /* generate gradient based on the accent and alternative colorss
+   */
+  --light-blue: #8da0d6;
+  --dark-bllue: #fdfdfd;
+  --gradient: linear-gradient(90deg, var(--light-blue), var(--dark-bllue));
+}
+
+/* @supports (color: color(display-p3 1 1 1)){
+  :root{
+    --accent-colour: color(display-p3 0.949, 0.918, 0.027);
+    --alternative-colour: color(display-p3 0.024, 0.694, 0.090);
+    --gradient: linear-gradient(90deg, var(--accent-colour), var(--alternative-colour));
+  } 
+} */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 10px;
+}
+body {
+  display: grid;
+  margin: 0;
+  font-size: 1.8rem;
+  font-family: var(--font-family);
+  background: var(--gradient);
+}
+.calculator-skin {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(4, 6rem);
+  grid-template-rows: minmax(7rem, auto) repeat(5, 1fr);
+  justify-content: center;
+  gap: 3px;
+}
+.previous-oprand {
+  font-size: 2rem;
+}
+.current-oprand {
+  font-size: 3rem;
+}
+.result {
+  grid-column: 1/-1;
+  grid-row: span 1;
+  background-color: #2c3f76;
+  color: rgb(234, 232, 232);
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: space-around;
+  padding: 20px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+.two-cell {
+  grid-column: span 2;
+}
+.one-cell {
+  border-radius: 0;
+  border: none;
+  background-color: var(--accent-colour);
+  outline-color: royalblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button:hover,
+button:focus {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+/* game grid */
+.grid-container {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 150px 1fr;
+  height: 100vh;
+  gap: 1px;
+}
+.navbar {
+  grid-column: span 2;
+  background-color: #f8f8f8;
+  padding: 10px;
+}
+.genres-list {
+  background-color: #e2e2e2;
+  padding: 10px;
+}
+.games-grid {
+  background-color: #f0f0f0;
+  padding: 10px;
+}
+@media (max-width: 1024px) {
+  .genres-list {
+    display: none;
+  }
+}

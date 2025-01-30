@@ -1,6 +1,6 @@
 // import { useState } from "react";
 import "./App.css";
-import Posts from "./projects/blog-posts/BlogPosts";
+// import Posts from "./projects/blog-posts/BlogPosts";
 import AppRouter from "./Router";
 // import Layout from "./projects/game-station/Layout";
 // import { Genres } from "./projects/game-station/hooks/useGenres";

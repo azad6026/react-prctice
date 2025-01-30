@@ -1,11 +1,10 @@
-import React from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import Calculator from "./projects/calculator/Calculator";
 import { MovieProvider } from "./projects/movie-app/context/MovieContext";
 import AddMovie from "./projects/movie-app/components/AddMovie";
 import MovieList from "./projects/movie-app/components/MovieList";
 import CitiesWeather from "./projects/weatherapp/CitiesWeather";
-import BlogPosts from "./projects/blog-posts/BlogPostsOnly";
+// import BlogPosts from "./projects/blog-posts/BlogPostsOnly";
 
 const AppRouter = () => {
   return (

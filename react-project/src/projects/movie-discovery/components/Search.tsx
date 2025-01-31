@@ -3,16 +3,19 @@ import { useQuery } from "@tanstack/react-query";
 import { Movie } from "../types/movie";
 import { useDebounce } from "../hooks/useDebounce";
 import MovieGrid from "./MovieGrid.client";
-import { fetchSearchMovies } from "../lib/api";
+import { fetchSearchMovies, fetchTrendingMovies } from "../lib/api";
 
 export default function Search() {
   const [searchTerm, setSearchTerm] = useState("");
   const debouncedSearchTerm = useDebounce(searchTerm, 500);
 
+  // Fetch trending movies when search is empty
   const { data } = useQuery<Movie[]>({
-    queryKey: ["search", debouncedSearchTerm],
-    queryFn: () => fetchSearchMovies(debouncedSearchTerm),
-    enabled: !!debouncedSearchTerm,
+    queryKey: ["movies", debouncedSearchTerm],
+    queryFn: () =>
+      debouncedSearchTerm
+        ? fetchSearchMovies(debouncedSearchTerm)
+        : fetchTrendingMovies(), // Fallback to trending
   });
 
   return (
@@ -24,6 +27,9 @@ export default function Search() {
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
       />
+      <h2 className="text-2xl font-bold my-4">
+        {debouncedSearchTerm ? "Search Results" : "Trending Movies"}
+      </h2>
       <MovieGrid movies={data || []} />
     </div>
   );

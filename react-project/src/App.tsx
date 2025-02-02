@@ -1,5 +1,6 @@
 // import { useState } from "react";
 import "./App.css";
+import "./styles/main.css";
 // import Posts from "./projects/blog-posts/BlogPosts";
 import AppRouter from "./Router";
 // import Layout from "./projects/game-station/Layout";

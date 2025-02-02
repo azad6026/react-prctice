@@ -6,9 +6,13 @@ export default function FavoritesGrid() {
   const { favorites } = useFavoritesStore();
 
   return (
-    <div className="mt-12">
-      <h2 className="text-2xl font-bold mb-4 px-4">Your Favorites</h2>
-      <MovieGrid movies={favorites} />
+    <div className="p-4">
+      <h2 className="text-xl font-bold mb-4">Your Favorites</h2>
+      {favorites.length > 0 ? (
+        <MovieGrid movies={favorites} />
+      ) : (
+        <p className="text-gray-500">No favorites yet. Search and add some!</p>
+      )}
     </div>
   );
 }

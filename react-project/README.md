@@ -18,4 +18,4 @@ Simple implimentation of dummy blog posts using useEffect with "Show more button
 
 ## Movie Discovery
 
-Using server components to fetch an external movie API and search as you type and find movies and mark them as favorite in your rowser sesssion
+Using server components and react query to fetch an external movie API and search as you type and find movies and mark them as favorite in your local storage using zustand

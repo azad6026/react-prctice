@@ -95,3 +95,55 @@ figure:has(.movie-image) {
     transform: scale(1.1);
   }
 }
+/* Weather app */
+.weather-widget-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.weather-widget {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  width: 250px;
+}
+
+.weather-widget h2 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.weather-widget h3 {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.weather-widget .temp {
+  font-size: 2em;
+  color: #ff4500;
+  margin-bottom: 10px;
+}
+
+.weather-widget .desc {
+  color: #888;
+  margin-bottom: 20px;
+}
+
+.weather-widget .details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.weather-widget .details div {
+  text-align: left;
+}
+
+.weather-widget .details p {
+  margin: 5px 0;
+  color: #555;
+}

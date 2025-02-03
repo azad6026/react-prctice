@@ -33,20 +33,23 @@ const CitiesWeather: React.FC = () => {
         {/* Display weather data for added cities */}
         {citiesWeather.map((city) => (
           <div key={city.name} className="weather-widget">
-            <h2>Selected Location: {city.name}</h2>
-            <h3>of {city.sys.country}</h3>
-            <p className="temp">{city.main.temp}°C</p>
-            <p className="desc">{city.weather[0].description}</p>
-            <div className="details">
-              <div>
-                <p>Humidity</p>
-                <p>{city.main.humidity}%</p>
-              </div>
-              <div>
-                <p>Wind Speed</p>
-                <p>{city.wind.speed} m/s</p>
-              </div>
-            </div>
+        <h2>{city.name}</h2>
+        <h3>of {city.sys.country}</h3>
+        <p className="temp">{Math.round(city.main.temp)}°C</p>
+        <p className="desc">
+          {city.weather[0].description}{" "}
+          <img className="emoji" src={`http://openweathermap.org/img/w/${city.weather[0].icon}.png`} />
+        </p>
+        <div className="details">
+          <div>
+            <p>Humidity</p>
+            <p>{city.main.humidity}%</p>
+          </div>
+          <div>
+            <p>Wind Speed</p>
+            <p>{city.wind.speed} m/s</p>
+          </div>
+        </div>
           </div>
         ))}
       </div>

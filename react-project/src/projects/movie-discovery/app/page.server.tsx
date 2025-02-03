@@ -6,8 +6,8 @@ export default async function Home() {
   const movies = await fetchTrendingMovies(); // Server-side fetch
   return (
     <div>
-      <nav className="bg-blue-600 p-4 text-white">
-        <h1 className="text-2xl font-bold">Movie Discovery</h1>
+      <nav>
+        <h1>Movie Discovery</h1>
       </nav>
       <MovieGrid movies={movies} />
     </div>

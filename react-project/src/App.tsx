@@ -1,5 +1,6 @@
 // import { useState } from "react";
 import "./App.css";
+import "./styles/globals.css";
 import "./styles/main.css";
 // import Posts from "./projects/blog-posts/BlogPosts";
 import AppRouter from "./Router";

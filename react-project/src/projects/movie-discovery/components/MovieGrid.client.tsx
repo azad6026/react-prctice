@@ -6,7 +6,7 @@ interface Props {
 
 export default function MovieGrid({ movies }: Props) {
   return (
-    <div className="movie-grid">
+    <div className="movie-grid-wrapper">
       {movies.map((movie) => (
         <MovieCard key={movie.id} movie={movie} />
       ))}

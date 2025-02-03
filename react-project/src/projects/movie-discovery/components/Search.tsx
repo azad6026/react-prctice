@@ -15,20 +15,22 @@ export default function Search() {
     enabled: !!debouncedSearchTerm, // Only fetch when search term exists
   });
   return (
-    <div className="search-container">
-      <input
-        type="text"
-        placeholder="Search movies..."
-        className="search-input"
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-      />
-      {debouncedSearchTerm && (
-        <div className="search-results">
-          <h2 className="search-title">Search Results</h2>
-          <MovieGrid movies={data || []} />
-        </div>
-      )}
-    </div>
+    <>
+      <div className="search-container">
+        <input
+          type="text"
+          placeholder="Search movies..."
+          className="search-input"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+        {debouncedSearchTerm && (
+          <div className="search-results">
+            <h2 className="search-title">Search Results</h2>
+            <MovieGrid movies={data || []} />
+          </div>
+        )}
+      </div>
+    </>
   );
 }

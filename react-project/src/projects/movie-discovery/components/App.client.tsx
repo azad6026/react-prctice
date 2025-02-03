@@ -9,7 +9,7 @@ const queryClient = new QueryClient();
 export default function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="container mx-auto">
+      <div className="inner-container">
         {/* Search & Results */}
         <Search />
 

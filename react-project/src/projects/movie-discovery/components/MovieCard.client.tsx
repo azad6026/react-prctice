@@ -15,7 +15,11 @@ export default function MovieCard({ movie }: { movie: Movie }) {
     <article className="movie-card">
       <figure style={{ viewTransitionName: "movie-image" }}>
         <img
-          src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+          src={
+            movie.poster_path
+              ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+              : `https://placehold.co/600x600?text= ${movie.title}`
+          }
           alt={movie.title}
           className="movie-image"
         />

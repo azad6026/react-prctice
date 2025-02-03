@@ -68,7 +68,7 @@ const AddCity: React.FC<AddCityProps> = ({ onAddCity, maxCities, cities }) => {
         ))}
       </ul>
       <button onClick={handleSubmitCity} disabled={cities.length >= maxCities}>
-        Add city
+        Add city as a favorite
       </button>
     </div>
   );

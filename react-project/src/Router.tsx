@@ -13,15 +13,23 @@ import RootLayout from "./projects/movie-discovery/app/layout.server";
 const AppRouter = () => {
   return (
     <Router>
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/calculator">Calculator</Link>
-              <Link to="/movie-app">Movie App</Link>
+      <div className="main-wrapper">
+        <nav className="nav">
+          <ul className="nav-list">
+            <li className="nav-list-item">
+              <Link className="nav-link" to="/calculator">
+                Calculator
+              </Link>
+              <Link className="nav-link" to="/movie-app">
+                Movie App
+              </Link>
               {/* <Link to="/blog-posts">Blog Posts</Link> */}
-              <Link to="/weatherapp">Weather App</Link>
-              <Link to="/movie-discovery">Discovery app</Link>
+              <Link className="nav-link" to="/weatherapp">
+                Weather App
+              </Link>
+              <Link className="nav-link" to="/movie-discovery">
+                Discovery app
+              </Link>
             </li>
           </ul>
         </nav>

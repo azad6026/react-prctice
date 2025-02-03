@@ -36,7 +36,6 @@ const CitiesWeather: React.FC = () => {
             <h2>Selected Location: {city.name}</h2>
             <h3>of {city.sys.country}</h3>
             <p className="temp">{city.main.temp}°C</p>
-            {/* Changed from city.city[0].description to city.weather[0].description */}
             <p className="desc">{city.weather[0].description}</p>
             <div className="details">
               <div>

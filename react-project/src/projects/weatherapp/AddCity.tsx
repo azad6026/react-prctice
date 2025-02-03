@@ -47,7 +47,7 @@ const AddCity: React.FC<AddCityProps> = ({ onAddCity, maxCities, cities }) => {
   };
 
   return (
-    <div>
+    <div className="search-container">
       <input
         type="text"
         onChange={handleInputChange}

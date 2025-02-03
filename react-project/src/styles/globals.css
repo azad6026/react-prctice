@@ -1,19 +1,108 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+:root {
+  --nav-bg-color: #333;
+  --nav-link-color: white;
+  --nav-link-hover-color: #ddd;
+  --nav-link-hover-bg: white;
+  --nav-padding: 1rem;
+  --nav-link-padding: 0.5rem 1rem;
+  --nav-link-transition: color 0.3s ease;
+  --nav-link-hover-transition: width 0.4s ease;
+}
+.inner-container {
+  padding: 3rem;
+}
+.section-wrapper{
+  display: grid;
+  gap: 2rem;
+}
+.nav {
+  background-color: var(--nav-bg-color);
+  padding: var(--nav-padding);
+  display: flex;
+  justify-content: center;
+  container-type: inline-size;
+  margin-block-end: 2rem;
+}
 
-@layer components {
-  .animate-pulse {
-    animation: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  }
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  padding: 0;
+  margin: 0;
+}
 
-  @keyframes pulse {
-    0%,
-    100% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.1);
-    }
+.nav-list-item {
+  display: flex;
+}
+
+.nav-link {
+  color: var(--nav-link-color);
+  text-decoration: none;
+  position: relative;
+  padding: var(--nav-link-padding);
+  transition: var(--nav-link-transition);
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  display: block;
+  margin-top: 5px;
+  right: 0;
+  background: var(--nav-link-hover-bg);
+  transition: var(--nav-link-hover-transition);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+  left: 0;
+  background: var(--nav-link-hover-bg);
+}
+
+.nav-link:hover {
+  color: var(--nav-link-hover-color);
+}
+
+@container (max-width: 768px) {
+  .nav-list {
+    flex-direction: column;
+    align-items: center;
   }
+  .nav-list-item {
+    margin-bottom: 1rem;
+  }
+}
+/* Search styles */
+.search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.search-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.search-input:focus {
+  border-color: #0070f3;
+  box-shadow: 0 0 0 3px rgba(0, 112, 243, 0.2);
+  outline: none;
+}
+.search-input:hover {
+  border-color: #0070f3;
+}
+.search-results {
+  width: 100%;
+  margin-top: 20px;
+}
+.search-title {
+  font-size: 24px;
+  margin-bottom: 10px;
 }

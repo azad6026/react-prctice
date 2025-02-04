@@ -6,7 +6,7 @@ Built a calculator with useReducer hook
 
 ## Movie app
 
-Using Context and useReducer to display gridd of movies , fetching from an external  API with title searchability and filtering
+Using Context and useReducer to display grid of movies , fetching from an external API with title searchability and filtering
 
 ## Game station project
 
@@ -14,7 +14,7 @@ Built a game grid project with the ablity to search, sort and filter the games b
 
 ## Blog Posts
 
-Simple implimentation of dummy blog posts using useEffect with "Show more button"
+Simple implimentation of dummy blog posts using useEffect with "Show more button" feature
 
 ## Movie Discovery
 

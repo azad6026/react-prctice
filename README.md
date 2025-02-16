@@ -1,4 +1,4 @@
-# This is a repo for all building react projects
+# This is a repo for building react projects
 ## Game hub
 ## Movie collections
 ## Calulator

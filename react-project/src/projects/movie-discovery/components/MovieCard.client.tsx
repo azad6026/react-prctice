@@ -1,11 +1,6 @@
 import { Movie } from "../types/movie";
 import { useFavoritesStore } from "../stores/useFavoritesStore";
 import { HeartIcon } from "@heroicons/react/24/solid";
-import clsx from "clsx";
-
-interface Props {
-  movie: Movie;
-}
 
 export default function MovieCard({ movie }: { movie: Movie }) {
   const { favorites, toggleFavorite } = useFavoritesStore();

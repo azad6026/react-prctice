@@ -4,4 +4,4 @@
 - Build reusable function components
 - Style components using Chakra UI
 - Manage component state with Zustand
-- Manage Backend State and caching with React Query
+- Manage Backend state and caching with React Query

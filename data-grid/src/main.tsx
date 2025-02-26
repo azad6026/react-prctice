@@ -7,6 +7,12 @@ import App from "./App";
 import theme from "./theme";
 import "./index.css";
 import "./index.css";
+
+import { Amplify } from "aws-amplify";
+import outputs from "../amplify_outputs.json";
+
+Amplify.configure(outputs);
+
 const queryClient = new QueryClient();
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>

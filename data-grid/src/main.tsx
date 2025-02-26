@@ -6,7 +6,6 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import App from "./App";
 import theme from "./theme";
 import "./index.css";
-import "./index.css";
 
 import { Amplify } from "aws-amplify";
 import outputs from "../amplify_outputs.json";

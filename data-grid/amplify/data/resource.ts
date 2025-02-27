@@ -3,39 +3,38 @@ import { type ClientSchema, a, defineData } from "@aws-amplify/backend";
 const schema = a.schema({
   Genre: a
     .model({
-      genreId: a.integer().required(), // Primary Key - Maps to 'id' in genres.ts
+      id: a.string().required(),
       name: a.string().required(),
       slug: a.string().required(),
       games_count: a.integer().required(),
       image_background: a.string().required(),
-      games: a.hasMany("Game", "genreId"), // One-to-many relationship with Game
+      games: a.hasMany("Game", "genreId"),
     })
     .authorization((allow) => [allow.guest()]),
 
   Game: a
     .model({
-      gameId: a.integer().required(), // Primary Key - Maps to 'id' in genres.ts -> games[]
+      id: a.string().required(),
       slug: a.string().required(),
       name: a.string().required(),
       added: a.integer().required(),
-      genreId: a.integer().required(), // Foreign key - Links to Genre.genreId
-      genre: a.belongsTo("Genre", "genreId"), // Many-to-one relationship with Genre
+      genreId: a.string().required(),
+      genre: a.belongsTo("Genre", "genreId"),
+    })
+    .authorization((allow) => [allow.guest()]),
+
+  PlatformFamily: a
+    .model({
+      id: a.string().required(),
+      name: a.string().required(),
+      slug: a.string().required(),
+      platforms: a.hasMany("Platform", "platformFamilyId"),
     })
     .authorization((allow) => [allow.guest()]),
 
   Platform: a
     .model({
-      platformId: a.integer().required(), // Primary key for Platform
-      name: a.string().required(),
-      slug: a.string().required(),
-      //has many relationship with Subplatform
-      subPlatforms: a.hasMany("SubPlatform", "platformId"),
-    })
-    .authorization((allow) => [allow.guest()]),
-
-  SubPlatform: a
-    .model({
-      subPlatformId: a.integer().required(),
+      id: a.string().required(),
       name: a.string().required(),
       slug: a.string().required(),
       games_count: a.integer().required(),
@@ -43,8 +42,8 @@ const schema = a.schema({
       image: a.string(),
       year_start: a.integer(),
       year_end: a.integer(),
-      platformId: a.integer().required(),
-      platform: a.belongsTo("Platform", "platformId"), // Many-to-one relationship with Platform
+      platformFamilyId: a.string().required(),
+      platformFamily: a.belongsTo("PlatformFamily", "platformFamilyId"),
     })
     .authorization((allow) => [allow.guest()]),
 });
